@@ -10,3 +10,4 @@ export const throttle = (fn: any, time: number) => {
     }, time)
   }
 }
+export default throttle

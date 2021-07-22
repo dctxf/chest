@@ -1,8 +1,8 @@
 {
-  "name": "hdvec",
+  "name": "chest",
   "version": "0.0.1",
-  "description": "衡度保事件中心 SDK",
-  "main": "hdvec.min.js",
+  "description": "自己常用的一些方法，工具",
+  "main": "chest.min.js",
   "scripts": {
     "dev": "rollup -w --environment NODE_ENV:development -c scripts/rollup.config.dev.js",
     "build": "rollup --environment NODE_ENV:development -c scripts/rollup.config.prod.js",
@@ -21,16 +21,25 @@
     "pub:z": "npm run z && npm publish --access=public"
   },
   "keywords": [
-    "hd",
-    "vec",
-    "event center",
-    "statistics"
+    "dctxf",
+    "utils",
+    "tools"
   ],
   "author": "dctxf",
   "license": "MIT",
+  "jest": {
+    "preset": "rollup-jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dctxf/chest.git"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
+    "@babel/preset-typescript": "^7.14.5",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^19.0.0",
@@ -39,8 +48,11 @@
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-replace": "^2.4.2",
     "@rollup/plugin-typescript": "^8.2.1",
+    "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
@@ -48,8 +60,11 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^5.1.0",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
     "prettier": "^2.3.2",
     "rollup": "^2.53.1",
+    "rollup-jest": "^1.1.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-clear": "^2.0.7",
     "rollup-plugin-filesize": "^9.1.1",
@@ -58,9 +73,8 @@
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-uglify": "^6.0.4",
+    "ts-jest": "^27.0.4",
+    "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
-  },
-  "dependencies": {
-    "axios": "^0.21.1"
   }
 }

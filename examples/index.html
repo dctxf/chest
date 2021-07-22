@@ -5,34 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HDVEC-demo</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./hdvec.js"></script>
+    <title>demo</title>
+    <script src="./chest.js"></script>
     <script>
-      const vec = new HDVEC()
-      vec.init({
-        apiUrl: 'https://api.hengdutech.com',
-        timeout: 1e3
-      })
+
     </script>
   </head>
 
   <body>
     <h2>请打开控制台</h2>
-    <form action="#">
-      <p><input type="text" placeholder="输入测试"></p>
-      <p><button id="btn">点击测试</button></p>
-    </form>
+    <script>
+      console.log("410182198910106596 is ID:", chest.isIdCardNo('410182198910106596'))
 
+    </script>
   </body>
-  <script>
-    const btn = document.getElementById('btn')
-    btn.addEventListener('click', () => {
-      vec.dispatch('HD_SUBMIT', {
-        name: '提交',
-        desc: '事件测试'
-      })
-    })
-  </script>
 
 </html>

@@ -1,3 +1,7 @@
+/**
+ * https://rollupjs.org/guide/zh/
+ * 配置文档请参考
+ */
 // 安装以下 npm 包
 import { nodeResolve } from '@rollup/plugin-node-resolve' // 解析 node_modules 中的模块
 import commonjs from '@rollup/plugin-commonjs' // cjs => esm
@@ -13,7 +17,7 @@ import babel from 'rollup-plugin-babel'
 import uglify from 'rollup-plugin-uglify'
 import { name, version, author } from '../package.json'
 
-const NAME = 'HDVEC'
+const NAME = 'chest'
 const banner =
   '/*!\n' +
   ` * ${name} v${version}\n` +
@@ -29,7 +33,7 @@ export default {
       format: 'umd',
       name: NAME,
       banner,
-      // exports: 'named',
+      exports: 'default',
     },
     {
       file: `dist/${name}.min.js`,
@@ -37,7 +41,21 @@ export default {
       name: NAME,
       plugins: [terser()],
       banner,
-      // exports: 'named',
+      exports: 'default',
+    },
+    {
+      file: `dist/${name}.cjs.js`,
+      format: 'cjs',
+      name: NAME,
+      banner,
+      exports: 'default',
+    },
+    {
+      file: `dist/${name}.es.js`,
+      format: 'es',
+      name: NAME,
+      banner,
+      exports: 'default',
     },
   ],
   // 注意 plugin 的使用顺序
